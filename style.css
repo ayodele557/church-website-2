@@ -11,10 +11,10 @@
 
 body{
     font-family: Inter, Arial, sans-serif;
-    background:ver(--bg);
+    background:var(--bg);
     color:#071e52;
     line-height:1.5;
-    -webkit-font-smoothing:antialised;
+    -webkit-font-smoothing: antialiased;
 }
 
 .site{
@@ -23,6 +23,13 @@ body{
    display: block;
 }
 
+#sidebar {
+    display: none;
+}
+
+#sidebar.active {
+    display: block;
+}
 
 .sidebar {
     background: #ffffff;
@@ -112,6 +119,10 @@ main {
     margin-left: 250px;
     padding: 40px;
 }
+
+#sidebar {
+    z-index: 100;
+}
 #sidebar ul {
     list-style: none;
     padding: 0;
@@ -137,7 +148,7 @@ main {
     width:32px;height:32px;
     background:var(--brand);
     border-radius:10px;
-    display:flex;align-items:center;justify-content:ceter;
+    display:flex;align-items:center;justify-content: center;
     color:#fff;font-weight:bold;font-size:10px;
     box-shadow:0 6px 18px rgba(30,136,229,.12);
 }
@@ -182,10 +193,12 @@ main {
     padding: 40px;
 }
 
-.menu-btn{
-    transition: 0.3s;
-    background:none;border-radius: 6px;
-    font-size:26px;cursor:#222;
+.menu-btn {
+    display: none;
+    background:none;
+    border: none;
+    font-size:30px;
+    cursor: pointer;
 }
 
 #menu-btn:hover {
@@ -262,9 +275,9 @@ main {
     gap:18px;
 }
 .feature{
-    background:linear-gradient(180deg,#1d1483,#130f74);
+    background:linear-gradient(180deg,#1d1483,#9d9cc9);
     padding:18px;border-radius:10px;
-    box-shadow:0 6px 18px rgba(2,6,23,.03);
+    box-shadow:0 6px 18px rgba(214, 217, 236, 0.03);
     transition:.25s ease;
 }
 .feature:hover{transform:translateY(-6px)}
@@ -311,6 +324,10 @@ footer {
     padding:3px;text-align:center;
     color:var(--muted);font-size:1rem;
 }
+
+#menu-btn {
+    display: block;
+}
 .fade-in{animation:fadeInUp .6s ease both}
 @keyframes fadeInUp{
     from{opacity:0;transform:translateY(8px)}
@@ -325,9 +342,29 @@ footer {
     .grid{grid-template-columns:repeat(2,1fr)}
 }
 
+@media screen and (min-width: 760px) {
+    #sidebar {
+        left: 0;
+    }
+}
+
 @media(max-width:600px){
     .grid{grid-template-columns:1fr}
     .my-video{height:200px}
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
 }
 
 header {
