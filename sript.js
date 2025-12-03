@@ -5,7 +5,7 @@ menuBtn.addEventListener('click', () => {
     sidebar.classList.toggle('active');
 });
 
-const links = document.querySelectorAll('#sidebar ul li a');
+const links = document.querySelectorAll('#sidebar a');
 
 links.forEach(link  => {
     link.addEventListener('click', (e) => {
@@ -29,5 +29,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
 
 
