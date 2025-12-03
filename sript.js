@@ -12,7 +12,7 @@ links.forEach(link  => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute('href'));
         if (target) {
-            target.scrolllntoView({ behaviour: 'smooth' });
+            target.scrollIntoView({ behaviour: 'smooth' });
         }
         sidebar.classList.remove('show');
     });
@@ -29,4 +29,5 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
 
