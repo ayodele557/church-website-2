@@ -1,8 +1,8 @@
-const menuBtn  = document.getElementById('menu-btn');
-const sidebar = document.getElementById('sidebar');
+const menuBtn  = document.getElementById("menu-btn");
+const sidebar = document.getElementById("sidebar");
 
-menuBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("active');
 });
 
 const links = document.querySelectorAll('#sidebar a');
@@ -12,23 +12,14 @@ links.forEach(link  => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({ behaviour: 'smooth' });
+            target.scrollIntoView({ behavior: 'smooth' });
         }
-        sidebar.classList.remove('show');
+        sidebar.classList.remove('active');
     });
 });
 
-const sections = document.querySelectorAll('section');
 
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY + window.innerHeight;
 
-    sections.forEach(sec => {
-        if (scrollY > sec.offsetTop + 100) {
-            sec.classList.add('fade-in');
-        }
-    });
-});
 
 
 
